@@ -13,10 +13,10 @@ window.onload = () => {
 };
 
 let generatorExcuse = () => {
-  let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
-  let when = [
+  const who = ["The dog", "My grandma", "His turtle", "My bird"];
+  const action = ["ate", "peed", "crushed", "broke"];
+  const what = ["my homework", "the keys", "the car"];
+  const when = [
     "before the class",
     "right on time",
     "when I finished",
@@ -24,10 +24,13 @@ let generatorExcuse = () => {
     "while I was praying"
   ];
 
-  let whoIndx = Math.floor(Math.random() * who.length);
-  let actionIndx = Math.floor(Math.random() * action.length);
-  let whatIndx = Math.floor(Math.random() * what.length);
-  let whenIndx = Math.floor(Math.random() * when.length);
+  const getRandomElement = array =>
+    array[Math.floor(Math.random() * array.length)];
 
-  return ` ${who[whoIndx]} ${action[actionIndx]} ${what[whatIndx]} ${when[whenIndx]}`;
+  const whoResult = getRandomElement(who);
+  const actionResult = getRandomElement(action);
+  const whatResult = getRandomElement(what);
+  const whenResult = getRandomElement(when);
+
+  return `${whoResult} ${actionResult} ${whatResult} ${whenResult}`;
 };
